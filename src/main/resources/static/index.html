@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="show"></div>
+	<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url: "index2",
+				dataType: "json",
+				success: function(data) {
+					data.forEach(function(d) {
+						$("#show").append(d.title + "---------------------->" + d.sid).append("<br/>");
+					});
+					
+				}
+			});
+		});
+	</script>
+</body>
+</html>
